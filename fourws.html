@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Online Tools for Teaching Web Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto+Serif:wght@300;600&family=Roboto:wght@300&display=swap" rel="stylesheet">
+<style>
+    * {
+        box-sizing: border-box;
+    } main {
+        width: 778px;
+        height: 1248px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: auto;
+        grid-gap: 6px;
+        margin: 48px auto;
+    } div {
+        background: whitesmoke;
+    } #intro {
+        grid-area: 1/1/1/3;
+    } img {
+        width: 386px;
+        height: auto;
+    } h1 {
+        font: bold 24pt/1.4em 'Roboto Serif';
+        text-align: center;
+    } h2 {
+        font: 14pt/1.4em 'Roboto Condensed';
+        text-transform: uppercase;
+        text-align: center;
+        margin-top: 16px;
+    } h3 {
+        font: 12pt/1.4em 'Roboto Condensed';
+        text-align: center;
+    } p {
+        font: 13pt/1.5em 'Roboto Serif';
+        width: 90%;
+        margin: 12px auto 4px auto;
+    } p.link {
+        text-align: center;
+        margin-top: 6px;
+    } #buttongroup {
+        width: 258px;
+        margin: 36px auto;
+    } button {
+        width: 127px;
+        height: 32px;
+        border: none;
+        background: lightgray;
+        font-size: 12pt;
+    } #button1 {
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+    } #button2 {
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+    } #button1:hover {
+        background: lightgreen;
+        cursor: pointer;
+    }
+</style>
+</head>
+
+<body>
+    <h1>The Four &ldquo;W&rdquo;s of Web Design</h1>
+    <div id="buttongroup">
+    <a href="gcea.html">
+        <button id="button1">Home</button>
+    </a>
+    <button id="button2">Four Ws</button>
+    </div>
+    <main>
+        <div id="intro">
+            <h2>The Idea</h2>
+            <p>The Four &ldquo;W&rdquo;s of Web Design is a concept introduced by Rich Adams while exchange teaching at the Institute of Publishing and Printing, Kyiv (Ukraine) Polytechnic University. Unfortunately there is no &ldquo;W&rdquo; in the Cyrillic alphabet, so the humor would have been lost had the class not been in English.</p>
+        </div>
+        <div id="who">
+            <h2>Who?</h2>
+            <p>We don&rsquo;t necessarily know who our audience is, but we want everyone to feel included. Consider a commercial site, where included readers are potential customers. Or a government site with information for a wide variety of citizens. Exceptions may include membership sites for which a fee is required.</p>
+            <p>Examples of &ldquo;who&rdquo; include accessibility needs of the disabled, such as readers with visual, auditory, or musculoskeletal impairments.</p>
+        </div>
+        <div id="what">
+            <h2>What?</h2>
+            <p>We don&rsquo;t know what equipment and software our readers have, but we want our site to look good on everyone&rsquo;s screen.</p>
+            <p>Examples of &ldquo;what&rdquo; include whether a reader has a desktop, laptop, tablet or cell phone; the operating system; the screen size; the browser and window size; and the installed fonts. Relevant practices include include responsive design to style pages to look good in different browser window sizes, and providing a &ldquo;font stack,&rdquo; a list of fonts in order of preference, in case the top choice is not available.</p>
+        </div>
+        <div id="where">
+            <h2>Where?</h2>
+            <p>We don&rsquo;t necessarily know where our readers come from, but we want to keep them on our site as long as possible. Similar to Las Vegas casinos that don&rsquo;t want guests to find the exit (except in an emergency), and heaven forbid that readers would navigate away from our site and not be able to find it again.</p>
+            <p>Example: Including &ldquo;target=_blank&rdquo; in links so they open in a new tab or window. Google Analytics does offer some information on where readers came from and how long they look at a site.</p>
+        </div>
+        <div id="width">
+            <h2>Width</h2>
+            <p>Web designers are not limited to a fixed media size, as in print. The width of web content is however limited by the screen size and browser window width, along with the reader&rsquo;s field of view at normal viewing distance. So web designers design for width and let scrolling take care of the height. Ask yourself if you prefer clicking from one page to another, scrolling horizontally, or scrolling vertically.</p>
+        </div>
+    </main>
+</body>
+</html>

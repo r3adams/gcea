@@ -47,13 +47,35 @@
         padding-bottom: 48px;
     } footer p {
         font: 11pt/1.4em 'Roboto Serif';
+    } #buttongroup {
+        width: 258px;
+        margin: 36px auto;
+    } button {
+        width: 127px;
+        height: 32px;
+        border: none;
+        background: lightgray;
+        font-size: 12pt;
+    } #button1 {
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+    } #button2 {
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+    } #button2:hover {
+        background: lightgreen;
     }
+
 </style>
 </head>
 
 <body>
     <h1>Online Tools for Teaching Web Design</h1>
     <h3>Katherine Farley<sup>1</sup> and Richard Adams<sup>2</sup></h3>
+    <div id="buttongroup">
+    <button id="button1">Home</button>
+    <a href="fourws.html"><button id="button2">Four Ws</button></a>
+    </div>
     <main>
         <div id="glitch">
             <img src="1-glitch.png" />
