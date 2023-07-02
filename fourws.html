@@ -52,14 +52,15 @@
         background: lightgray;
         font-size: 12pt;
     } #button1 {
-        border-top-left-radius: 6px;
-        border-bottom-left-radius: 6px;
+        border-radius: 6px 0 0 6px;
     } #button2 {
-        border-top-right-radius: 6px;
-        border-bottom-right-radius: 6px;
+        border-radius: 0 6px 6px 0;
     } #button1:hover {
         background: lightgreen;
         cursor: pointer;
+        transition: background 0.67s;
+    } a {
+        text-decoration: none;
     }
 </style>
 </head>
