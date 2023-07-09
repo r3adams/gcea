@@ -53,6 +53,7 @@
         box-shadow: 1px 2px 4px darkgray;
     } footer {
         width: 778px;
+        max-width: 100%;
         margin: 24px auto;
         padding-bottom: 48px;
     } footer p {
@@ -81,6 +82,17 @@
     } #notable-resources {
         grid-area: 4/1/5/3;
         background: gainsboro;
+    } @media only screen and (max-width: 720px) {
+        main {
+            width: 386px;
+            display: inline;
+            height: auto;
+            margin: 48px auto;
+            background: pink;
+        } main div {
+            width: 386px;
+            margin: 36px auto;
+        }
     }
 </style>
 </head>
