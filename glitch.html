@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Online Tools for Teaching Web Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto+Serif:wght@300;600&family=Roboto:wght@300&display=swap" rel="stylesheet">
+<style>
+    * {
+        box-sizing: border-box;
+    } main {
+        width: 778px;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: auto;
+        grid-gap: 8px;
+        margin: 48px auto;
+    } #glitch {
+        background: gainsboro;
+        padding: 8px;l
+    } img {
+        width: 386px;
+        height: auto;
+    } h1 {
+        font: bold 24pt/1.4em 'Roboto Serif';
+        text-align: center;
+    } h2 {
+        font: 14pt/1.4em 'Roboto Condensed';
+        text-transform: uppercase;
+        text-align: center;
+        margin-top: 12px;
+    } h3 {
+        font: 12pt/1.4em 'Roboto Condensed';
+        text-align: center;
+    } p, ol {
+        font: 12pt/1.4em 'Roboto Serif';
+        width: 100%;
+        margin: 4px auto 4px auto;
+    } figcaption {
+        font: italic 12pt/1.4em 'Roboto Serif';
+        margin-top: 8px;
+    } li {
+        margin: 8px 0 0 0;
+    } p.link {
+        text-align: center;
+        margin-top: 6px;
+    } #buttongroup {
+        width: 262px;
+        margin: 36px auto;
+    } button {
+        width: 127px;
+        height: 32px;
+        border: none;
+        background: lightgray;
+        font-size: 12pt;
+    } #button1 {
+        border-radius: 6px 0 0 6px;
+    } #button3 {
+        border-radius: 0 6px 6px 0;
+    } #button1:hover {
+        background: lightgreen;
+        cursor: pointer;
+        transition: background 0.67s;
+    } a {
+        text-decoration: none;
+</style>
+</head>
+
+<body>
+    <h1>Getting Started with Glitch</h1>
+
+    <div id="buttongroup">
+    <a href="gcea.html">
+        <button id="button1">Home</button>
+    </a>
+    <button id="button3">Glitch</button>
+    </div>
+    <main>
+        <div id="glitch">
+            <img src="10-glitch.png" />
+            <figcaption>Starting page in Glitch, with settings at left, HTML code in the center, and preview at right.</figcaption>
+        </div>
+        <div id="glitch-instr">
+            <ol>
+                <li>Go to <a href="https://glitch.com">glitch.com</a>, create an account, and log in.</li>
+                <li>Click &ldquo;New Project&rdquo; and choose from the available templates.</li>
+                <li>Modify the template code, or delete it and write your own.</li>
+                <li>When ready to preview the code, select Preview at the bottom of the window.</li>
+                <li>Students who complete assignments in Glitch can click the &ldquo;Share&rdquo; button, copy the link to the code, and submit it to a distance learning program.</li>
+                <li>If you want to demonstrate something for a student by editing their code, you can click Remix, make the desired edits, then share the link with the student.</li>
+                <li>Students can rename the default project title to add their name or assignment number by going to Settings &gt; Edit Project Details.</li>
+            </ol>
+        </div>
+
+    </main>
+</body>
+</html>
