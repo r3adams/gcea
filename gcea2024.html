@@ -1,0 +1,139 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <title>Catalog of Web Pages</title>
+	<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
+    <style>
+	* {margin: 0; padding: 0;}
+		#banner {
+			width: 1228px;
+			max-width: 100%;
+			height: 184px;
+			background: lightblue;
+			margin: 0 auto;
+			font-family: Lobster;
+			color: dimgray;
+		} #banner h1 {
+			font: 48pt/2.0em Lobster;
+			text-align: center;
+            text-shadow: 1px 1px 0px red;
+        } ul {
+            width: 1228px;
+			margin: 0 auto;
+        } ul li {
+            width: 20%;
+            height: 40px;
+            list-style: none;
+            float: left;
+            text-align: center;
+            font: 14pt/2.2em Roboto;
+            background: lightblue;
+        } ul a li:hover {
+            background: rgba(173,216,230,0.50);
+        } li, a {
+            color: black;
+	} #page {
+		width: 1228px;
+		max-width: 100%;
+		height: auto;
+		margin: 0 auto 48px auto;
+		background: whitesmoke;
+		padding: 48px 0;
+        } #header {
+            width: 624px;
+            max-width: 90%;
+            margin: 0 auto;
+            font: italic 14pt/1.4em Roboto;
+            text-align: left;
+		} #header p {
+			margin: 72px auto;
+		} #page {
+			width: 1228px;
+			max-width: 100%;
+			height: auto;
+			margin: 0 auto;
+            padding: 0 0 144px 0;
+			background: whitesmoke;
+        } #header {
+            width: 624px;
+            max-width: 90%;
+            margin: 0 auto 24px auto;
+            font: italic 14pt/1.4em Roboto;
+            text-align: left;
+		} #header p {
+			margin: 72px auto 36px auto;
+			text-align: center;
+		} #flexbox {
+			width: 1228px;
+			max-width: 90%;
+			margin: 0 auto;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			// border: 1px dotted gray;
+		} .thumb {
+			width: 232px;
+			height: auto;
+			display: inline-block;
+			margin: 18px 12px 0 12px;
+			transition: transform 0.3s;
+            border: 1px solid darkgray;
+            box-shadow: 2px 3px 6px lightgray;
+		} .thumb:hover {
+            transform: scale(1.05);
+		} figcaption {
+            font: italic 12pt/1.4em Roboto;
+			width: 232px;
+			padding: 6px;
+		} button {
+			width: 150px;
+			height: 40px;
+			background: lightgreen;
+			margin: 24px auto;
+			border-radius: 6px;
+			display: block;
+		} button:hover {
+			box-shadow: 2px 3px 6px darkgray;
+		} @media only screen and (max-width: 750px) {
+			#banner {
+				height: 48vw;
+				font-size: 8vw;
+				line-height: 24vw;
+			}
+		}
+    </style>
+    </head>
+    <body>
+    <div id="page">
+	 <div id="banner">
+		<h1>GCEA 2024</h1>
+	 </div>
+	 <ul>
+         <a href="https://r3adams.github.io/grc365/welcome.html"><li>Home</li></a>
+         <li>UNLV GRC 365 Web</li>
+         <a href="https://r3adams.github.io/grc420/index.html"><li>UNLV GRC 420 Studio III</li></a>
+	 <a href="https://r3adams.github.io/gcea/gcea.html"><li>GCEA 2023</li></a>
+	 <a href="https://r3adams.github.io/gcea/gcea2024.html"><li>GCEA 2024</li></a>
+    </ul>
+	<div id="header">
+    <p>Presentations for the GCEA 2024 Conference</p>
+    </div>
+	<div id="flexbox">
+	<figure>
+	<a href="https://r3adams.github.io/grc365/jquery.html" target="_blank"><img class="thumb" src="thumb-jquery.jpg" /></a>
+	<figcaption>Examples of functions available in MIT&rsquo;s free jQuery JavaScript library.</figcaption>
+	<a href="jquery-tutorial.zip"><button>Tutorial Files</button></a>
+
+	</figure>
+    <figure>
+    <a href="https://r3adams.github.io/grc420/responsive-design.html" target="_blank"><img class="thumb" src="responsive-thumb.jpg" /></a>
+	<figcaption>Quick-reference guide to responsive design for fixed-width pages and the grid layout.</figcaption>
+	<a href="responsive-tutorial.zip"><button>Tutorial Files</button></a>
+	</figure>
+
+    </div>
+	</div>
+    </body>
+    </html>
