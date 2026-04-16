@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Samples</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+    @font-face {
+        font-family: Candara;
+        src: url("Candara.ttf");
+    } @font-face {
+        font-family: Georgia;
+        src: url("Georgia.ttf");
+    } body {
+        width: 1024px;
+        margin: 0 auto;
+    } h1 {
+        font: 48pt/1.4em 'Dancing Script';
+        text-align: center;
+        text-shadow: 1px 2px 2px rgba(253,200,0,1.00);
+    } h2 {
+        text-align: center;
+        margin: 6px 0 18px 0;
+    } p {
+        font: 14pt/1.4em Candara, serif;
+        width: 600px;
+        margin: 48px auto;
+    } .image-container {
+        width: 928px;
+        height: 748px;
+        padding: 24px;
+        background: gainsboro;
+        margin: 0 auto 72px auto;
+        display: grid;
+        grid-template: repeat(2,1fr) / repeat(3,1fr);
+    } figcaption {
+        font: italic 14pt/1.4em Georgia, serif;
+        text-align: center;
+        margin-bottom: 48px;
+    } figure {
+        width: 230px;
+    } details {
+        font: 12pt/1.4em Candara;
+        margin-top: 3px;
+    } button {
+        width: 120px;
+        height: 40px;
+        background: lightblue;
+        border: 1px solid gray;
+        border-radius: 6px;
+        display: block;
+        margin: 12px auto 36px auto;
+        cursor: pointer;
+    } button:hover {
+        background: rgba(135,153,167,0.5);
+    } img {
+        width: 230px;
+        height: auto;
+        transition: box-shadow 0.3s;
+    } img:hover {
+        box-shadow: 2px 3px 6px darkgray;
+        transition: box-shadow 0.3s;
+    }
+</style>
+</head>
+<body>
+    <h1>GCEA 2026</h1>
+    <p>JavaScript adds interactivity to web pages but can be intimidating, especially for the aesthetically oriented student. Artificial intelligence (AI) chat programs can write JavaScript that a beginning web designer may not be able to write on their own.</p>
+    <p>This page links to  some examples of JavaScript written by ChatGPT. Click the thumbnail to view the page, which includes the AI prompt used to write the JavaScript.</p>
+    <button onClick="toggleAllDetails()">Open/Close Captions</button>
+
+    <div class="image-container">
+    <figure>
+        <a href="1_portfolio.html">
+        <img src="page1.jpg" alt="Page 1">
+        </a>
+        <details>
+        <summary>Expandable Portfolio</summary>
+        When a thumbnail image is clicked, it expands for easier viewing.
+        </details>
+    </figure>
+    <figure>
+        <a href="2_checkboxes.html">
+        <img src="page2.jpg" alt="Page 2">
+        </a>
+        <details>
+        <summary>Check/Uncheck All Boxes</summary>
+        Readers can check or uncheck all checkboxes in a form.
+        </details>
+    </figure>
+    <figure>
+        <a href="3_accessibility.html">
+        <img src="page3.jpg" alt="Page 3">
+        </a>
+        <details>
+        <summary>Accessibility</summary>
+        Buttons to print page, increase contrast, and reset contrast.
+        </details>
+    </figure>
+    <figure>
+        <a href="4_loan-calculator.html">
+        <img src="page4.jpg" alt="Page 3">
+        </a>
+        <details>
+        <summary>Loan Calculator</summary>
+        Calculates the monthly payment for a loan of a specified amount, interest rate, and time.
+        </details>
+    </figure>
+    <figure>
+        <a href="5_password-page.html">
+        <img src="page5.jpg" alt="Page 4">
+        </a>
+        <details>
+        <summary>Password-Protected Page</summary>
+        Readers must enter a supplied password to see the protected component of the page.
+        </details>
+    </figure>
+    <figure>
+        <a href="6_form-cookie.html">
+        <img src="page6.jpg" alt="Page 5">
+        </a>
+        <details>
+        <summary>Form Cookie</summary>
+        Readers can save their form data in a browser cookie and recall it.
+        </details>
+    </figure>
+</div>
+<script>
+    const images = document.querySelectorAll('.image-container img');
+    let zoomedImage = null;
+
+    images.forEach(img => {
+      img.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevents the body click from firing
+        // If already zoomed, do nothing
+        if (zoomedImage && zoomedImage !== img) {
+          zoomedImage.classList.remove('zoomed');
+        }
+
+        if (img.classList.contains('zoomed')) {
+          img.classList.remove('zoomed');
+          zoomedImage = null;
+        } else {
+          img.classList.add('zoomed');
+          zoomedImage = img;
+        }
+      });
+    });
+
+    // Click outside to reset zoom
+    document.body.addEventListener('click', () => {
+      if (zoomedImage) {
+        zoomedImage.classList.remove('zoomed');
+        zoomedImage = null;
+      }
+    });
+</script>
+<script lang="javascript">
+function toggleAllDetails() {
+  // Get all <details> elements on the page
+  const allDetails = document.querySelectorAll('details');
+
+  // Iterate through each <details> element
+  allDetails.forEach(detailsElement => {
+    // Toggle the 'open' attribute
+    // If it has 'open', remove it (closes the details)
+    // If it doesn't have 'open', add it (opens the details)
+    if (detailsElement.hasAttribute('open')) {
+      detailsElement.removeAttribute('open');
+    } else {
+      detailsElement.setAttribute('open', true);
+    }
+  });
+}
+</script>
+<script>
+    function toggle(source) {
+        checkboxes = document.getElementsByName('trip');
+        for(var checkbox in checkboxes)
+        checkboxes[checkbox].checked = source.checked;
+    }
+</script>
+</body>
+</html>
