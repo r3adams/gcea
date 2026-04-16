@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Samples</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+     @font-face {
+        font-family: Candara;
+        src: url("Candara.ttf");
+     } h1 {
+        font: 48pt/1.4em 'Dancing Script';
+        text-align: center;
+        text-shadow: 1px 2px 2px rgba(253,200,0,1.00);
+     } h2 {
+        text-align: center;
+        margin-top: 48px;
+        font-family: Candara;
+     } p {
+        font: 14pt/1.4em Candara, serif;
+        width: 600px;
+        margin: 24px auto;
+     } figcaption {
+        font: italic 14pt/1.4em Georgia, serif;
+        text-align: center;
+        margin-bottom: 48px;
+    } ul {
+        width: 1050px;
+        padding: 0;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-evenly;
+    } li {
+        width: 175px;
+        height: 50px;
+        background: lightgray;
+        border-radius: 12px;
+        list-style: none;
+        font: 14pt/2.8em Candara;
+        text-align: center;
+    } a li {
+        color: black;
+    } a li:hover {
+        background: lightgray;
+    } a {
+        text-decoration: none;
+    } figure {
+        width: 250px;
+    } details {
+        font: 12pt/1.4em Candara;
+        margin-top: 3px;
+    } .image-container {
+        width: 930px;
+        height: 384px;
+        margin: 0px auto 36px auto;
+        display: grid;
+        grid-template: 50px 1fr / repeat(3,310px);
+        background: whitesmoke;
+    } .image-container img {
+        width: 250px;
+        height: auto;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    } .zoomed {
+        position: relative;
+        z-index: 1000;
+        transform: scale(4);
+        box-shadow: 2px 3px 6px gray;
+    } form {
+        width: 400px;
+        height: 300px;
+        margin: 48px auto;
+        padding: 24px;
+        font: 14pt/1.6em Candara;
+        background: gold;
+        border-radius: 12px;
+    } button {
+        width: 120px;
+        height: 40px;
+        background: lightblue;
+        grid-area: 1/1/2/4;
+        border: 1px solid gray;
+        border-radius: 6px;
+        margin: 12px 0 0 40px;
+        cursor: pointer;
+    } button:hover {
+        background: rgba(135,153,167,0.5);
+    }
+</style>
+</head>
+<body>
+  <h1>Expandable Portfolio</h1>
+  <div class="image-container">
+   <button onClick="toggleAllDetails()">Open/Close Captions</button>
+    <figure>
+    <img src="image1.jpg" alt="Image 1">
+    <details>
+    <summary>Rocky Mountains</summary>
+    Our balloon trip over the Rocky Mountains is spectacular! (click image to enlarge)
+    </details>
+    </figure>
+    <figure>
+    <img src="image2.jpg" alt="Image 2">
+    <details>
+    <summary>Midwestern plains</summary>
+    Enjoy the view of endless fields and distant mountains.
+    </details>
+    </figure>
+    <figure>
+    <img src="image3.jpg" alt="Image 3">
+    <details>
+    <summary>Great Balloon Race</summary>
+    The great balloon race included dozens of balloons from all over the world.
+    </details>
+    </figure>
+</div>
+<h2>Prompt</h2>
+<p>Write a JavaScript program for a web page that consists of multiple small thumbnail images so that, when an image is clicked, it expands to 400% of original size, appears against a dark background, and includes an "X" to close the enlarged view.</p>
+<script>
+    const images = document.querySelectorAll('.image-container img');
+    let zoomedImage = null;
+
+    images.forEach(img => {
+      img.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevents the body click from firing
+        // If already zoomed, do nothing
+        if (zoomedImage && zoomedImage !== img) {
+          zoomedImage.classList.remove('zoomed');
+        }
+
+        if (img.classList.contains('zoomed')) {
+          img.classList.remove('zoomed');
+          zoomedImage = null;
+        } else {
+          img.classList.add('zoomed');
+          zoomedImage = img;
+        }
+      });
+    });
+
+    // Click outside to reset zoom
+    document.body.addEventListener('click', () => {
+      if (zoomedImage) {
+        zoomedImage.classList.remove('zoomed');
+        zoomedImage = null;
+      }
+    });
+
+function toggleAllDetails() {
+  // Get all <details> elements on the page
+  const allDetails = document.querySelectorAll('details');
+
+  // Iterate through each <details> element
+  allDetails.forEach(detailsElement => {
+    // Toggle the 'open' attribute
+    // If it has 'open', remove it (closes the details)
+    // If it doesn't have 'open', add it (opens the details)
+    if (detailsElement.hasAttribute('open')) {
+      detailsElement.removeAttribute('open');
+    } else {
+      detailsElement.setAttribute('open', true);
+    }
+  });
+}
+</script>
+</body>
+</html>

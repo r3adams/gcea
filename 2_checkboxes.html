@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+     @font-face {
+        font-family: Candara;
+        src: url("Candara.ttf");
+     } body {
+        background: whitesmoke;
+        width: 1024px;
+        margin: 0 auto;
+     } h1 {
+        font: 48pt/1.4em 'Dancing Script';
+        text-align: center;
+        text-shadow: 1px 2px 2px rgba(253,200,0,1.00);
+    } h2 {
+        font-family: Candara;
+        text-align: center;
+    } p {
+        font: 14pt/1.4em Candara;
+        width: 768px;
+        margin: 0 auto;
+    } form {
+        width: 400px;
+        height: 300px;
+        margin: 48px auto;
+        padding: 24px;
+        font: 14pt/1.6em Candara;
+        background: gold;
+        border-radius: 12px;
+    }
+</style>
+</head>
+
+<body>
+    <h1>Form with Check/Uncheck All</h1>
+    <form action="#" method="post">
+    <h2>Response form</h2>
+    <fieldset>
+    <legend>Which balloon tours interest you?</legend>
+    <input onClick="toggle(this)" type="checkbox" id="all" name="trip"><label for="all"> Check/uncheck all</label><br/>
+    <input type="checkbox" id="west" name="trip"><label for="west"> West Coast</label><br/>
+    <input type="checkbox" id="midwest" name="trip"><label for="midwest"> Midwest</label><br/>
+    <input type="checkbox" id="east" name="trip"><label for="east"> East Coast</label><br/>
+    <input type="checkbox" id="amer" name="trip"><label for="amer"> Central &amp; South America</label><br/>
+    <input type="checkbox" id="europe" name="trip">
+    <label for="europe"> Europe</label><br/>
+    </fieldset>
+</form>
+<h2>Prompt</h2>
+<p>Write a JavaScript program for an HTML form containing checkboxes that enables the user to check or uncheck all boxes.</p>
+</body>
+</html>

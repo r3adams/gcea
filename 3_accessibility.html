@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript :: Moby Dick</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=New+Rocker&display=swap" rel="stylesheet">
+<style>
+    #page {
+        width: 928px;
+        height: 1224px;
+        margin: 24px auto;
+        background: aliceblue;
+        border-radius: 24px;
+        border: 1px solid lightblue;
+        color: dimgray;
+    } h1 {
+        font: 48pt/1.4em "New Rocker";
+        text-align: center; 
+    } p {
+        font: 14pt/1.4em Georgia;
+        width: 768px;
+        margin: 24px auto;
+    } img {
+        width: 125px;
+    } img:hover {
+        filter: opacity(0.67);
+    } figure {
+        width: 125px;
+        margin: 0 auto;
+        cursor: pointer;
+    } figcaption {
+        font: 12pt/1.4em Georgia;
+        text-align: center;
+    } #buttons {
+        width: 500px;
+        margin: 48px auto 0 auto;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-end;
+    } button {
+        width: 125px;
+        height: 50px;
+        font-size: 12pt;
+        font-weight: bold;
+        margin: 6px;
+    } @media print {
+        body {
+            width: 7in;
+            height: 9.0in;
+        } figure {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+    }
+</style>
+</head>
+
+<body>
+    <div id="page">
+    <h1>Moby Dick</h1>
+    <p><i>Moby-Dick;</i> or, <i>The Whale,</i> is an 1851 epic novel by American writer Herman Melville. The book is centered on the sailor Ishmael's narrative of the maniacal quest of Ahab, captain of the whaling ship Pequod, for vengeance against Moby Dick, the giant white sperm whale that bit off his leg on the ship's previous voyage. A contribution to the literature of the American Renaissance, Moby-Dick was published to mixed reviews, was a commercial failure, and was out of print at the time of the author's death in 1891. Its reputation as a Great American Novel was established only in the 20th century, after the 1919 centennial of its author's birth. William Faulkner said he wished he had written the book himself, and D. H. Lawrence called it “one of the strangest and most wonderful books in the world” and “the greatest book of the sea ever written.” Its opening sentence, “Call me Ishmael,” is among world literature's most famous.</p>
+    <p>Melville began writing Moby-Dick in February 1850 and finished 18 months later, a year after he had anticipated. Melville drew on his experience as a common sailor from 1841 to 1844, including on whalers, and on wide reading in whaling literature. The white whale is modeled on a notoriously hard-to-catch albino whale Mocha Dick, and the book's ending is based on the sinking of the whaleship Essex in 1820. The detailed and realistic descriptions of sailing, whale hunting and of extracting whale oil, as well as life aboard ship among a culturally diverse crew, are mixed with exploration of class and social status, good and evil, and the existence of God.</p>
+<div id="buttons">
+    <figure>
+    <img onClick="printPage()" src="whale.png" height="110" />
+    <figcaption>Print Window</figcaption>
+    </figure>
+    
+    <figure>
+    <img onClick="increaseContrast()" src="whale-spout.png" />
+    <figcaption>Increase Contrast</figcaption>
+    </figure>
+    
+    <figure>
+    <img onClick="resetContrast()" src="whale-spout.png" style="filter: grayscale(0.75)" />
+    <figcaption>Reset Contrast</figcaption>
+    </figure>
+</div>
+
+</div>
+<script>
+    function printPage() {
+        window.print();
+    } function increaseContrast() {
+        document.getElementById('page').style.background='white';
+         document.getElementById('page').style.color='black';
+    } function resetContrast() {
+        document.getElementById('page').style.background='aliceblue';
+        document.getElementById('page').style.color='dimgray';
+    }
+</script>
+
+</body>
+</html>

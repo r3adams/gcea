@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Form Data to Cookie</title>
+<link href="https://fonts.googleapis.com/css2?family=Story+Script&display=swap" rel="stylesheet">
+<style>
+    @font-face {
+        font-family: Candara;
+        src: url("Candara.ttf");
+    } @font-face {
+        font-family: Georgia;
+        src: url("Georgia.ttf");
+    } @font-face {
+        font-family: Roboto;
+        src: url("Roboto-Regular.ttf");
+    } body {
+        background: whitesmoke;
+    } form {
+        background: lightblue;
+        width: 512px;
+        height: 512px;
+        border-radius: 24px;
+        box-shadow: 2px 3px 6px darkgray;
+        margin: 72px auto 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    } h1 {
+        font: 36pt/1.0em 'Story Script';
+        text-align: center;
+    } h2 {
+        font-family: Helvetica, Arial, sans-serif;
+        text-align: center;
+        margin-top: 24px;
+    } input[type="text"], textarea {
+        width: 90%;
+        font: 14pt/1.4em Roboto;
+    } textarea {
+        height: 130px;
+    } #buttons {
+        width: 260px;
+        display: flex;
+        justify-content: space-evenly;
+    } input[type="submit"], button {
+        width: 120px;
+        height: 40px;
+        background: lightgreen;
+        border-radius: 6px;
+        border: 1px solid dimgray;
+        font: 10pt/1.4em Roboto;
+    } input[type="submit"]:hover, button:hover {
+        box-shadow: 1px 2px 3px darkgray;
+        transition: box-shadow 0.67s;
+    } button {
+        background: orange;
+    } label {
+        font: 14pt/1.4em Candara;
+        width: 90%;
+    } p {
+        font: 14pt/1.4em Georgia;
+        width: 650px;
+        margin: 64px auto;
+    }
+</style>
+<title>Cookie Form</title>
+<script>
+        // Set cookie
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                let date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=/";
+        }
+
+        // Get cookie
+        function getCookie(name) {
+            let nameEQ = name + "=";
+            let cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                let c = cookies[i].trim();
+                if (c.indexOf(nameEQ) === 0) {
+                    return decodeURIComponent(c.substring(nameEQ.length));
+                }
+            }
+            return "";
+        }
+
+        // Save form data into cookies
+        function saveData(event) {
+            event.preventDefault(); // prevent page reload
+
+            let firstName = document.getElementById("fname").value;
+            let lastName = document.getElementById("lname").value;
+            let message = document.getElementById("msg").value;
+
+            setCookie("firstName", firstName, 7);           setCookie("lastName", lastName, 7);
+            setCookie("message", message, 7);
+        }
+
+        // Load cookie data into form
+        function loadData() {
+           document.getElementById("fname").value = getCookie("firstName");
+           document.getElementById("lname").value = getCookie("lastName");
+           document.getElementById("msg").value = getCookie("message");
+        }
+</script>
+</head>
+<body>
+
+<form onsubmit="saveData(event)">
+    <h1>Form Data to Cookie</h1>
+    <label>First name</label>
+    <input type="text" id="fname" />
+    <label style="margin-top: 6px;">Last name</label>
+    <input type="text" id="lname" /><br/>
+
+    <label>Message</label>
+    <textarea id="msg"></textarea><br/>
+    <div id="buttons">
+    <input type="submit" value="Save to Cookie" /><button onclick="loadData()">Load Cookie Data</button>
+    </div>
+</form>
+<p>Data entered into this form can be saved as a cookie by pressing the &ldquo;Save to Cookie&rdquo; button. When the page is reloaded, the saved form data can be reloaded by pressing &ldquo;Load Cookie Data.&rdquo;</p>
+<h2>Prompt</h2>
+<p style="margin-top: 0;">Write HTML, CSS, and JavaScript for a form that includes first name, last name, message, a button to save the form data in a cookie, and a button to load the cookie data into the form.</p>
+</body>
+</html>
